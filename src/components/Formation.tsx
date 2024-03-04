@@ -1,11 +1,6 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-
 import "react-vertical-timeline-component/style.min.css";
-
 import { styles } from "../style";
 import { graduations } from "../constants";
 import { SectionWrapper } from "../hoc";
@@ -20,7 +15,6 @@ interface EducationData {
   address: string;
 }
 
-// Adjust EducationCard's props to expect the whole graduation object
 const EducationCard = ({ graduation }: { graduation: EducationData }) => {
   return (
     <VerticalTimelineElement
@@ -29,13 +23,7 @@ const EducationCard = ({ graduation }: { graduation: EducationData }) => {
         color: "#fff",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={
-        <div>
-          {graduation.date}
-          <br className="sm:block hidden" />
-          <span>{graduation.address}</span>
-        </div>
-      }
+      date={`${graduation.date}\n${graduation.address}`} // Concatenated date and address
       iconStyle={{ background: graduation.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
@@ -79,7 +67,7 @@ const Education = () => {
           {graduations.map((graduation, index) => (
             <EducationCard
               key={`graduation-${index}`}
-              graduation={graduation} // Pass the whole graduation object
+              graduation={graduation}
             />
           ))}
         </VerticalTimeline>
