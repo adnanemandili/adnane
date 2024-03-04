@@ -9,7 +9,6 @@ import Home from "./Home";
 import Particules from "./Particules";
 import Programmer from "./Programmer";
 import Loader from "./Loader";
-import techHolder from "./techHolder";
 import EarthCanvas from "./EarthCanvas";
 
 export{
@@ -24,6 +23,5 @@ export{
     Home,
     Programmer,
     Loader,
-    techHolder,
     EarthCanvas
 };
