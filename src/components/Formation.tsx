@@ -1,5 +1,3 @@
-
-import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -13,69 +11,61 @@ import { graduations } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const EducationCard = ({ graduation }) => {
-    return (
-      <VerticalTimelineElement
-        contentStyle={{
-          background: "#1d1836",
-          color: "#fff",
-        }}
-        contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-        date={
-            <div>
-                {graduation.date}
-                <br className='sm:block hidden' />
-                <span>
-                    {graduation.address}
-                </span>
-            </div>
-        }
-        
-        iconStyle={{ background: graduation.iconBg }}
-        icon={
-          <div className='flex justify-center items-center w-full h-full'>
-            <img
-              src={graduation.icon}
-              alt={graduation.college_name}
-              className='w-[100%] h-[100%] object-contain'
-            />
-          </div>
-        }
-      >
+interface EducationData {
+  diploma: string;
+  college_name: string;
+  icon: string;
+  iconBg: string;
+  date: string;
+  address: string;
+}
+
+// Adjust EducationCard's props to expect the whole graduation object
+const EducationCard = ({ graduation }: { graduation: EducationData }) => {
+  return (
+    <VerticalTimelineElement
+      contentStyle={{
+        background: "#1d1836",
+        color: "#fff",
+      }}
+      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      date={
         <div>
-          <h3 className='text-white text-[24px] font-bold'>{graduation.diploma}</h3>
-          <p
-            className='text-secondary text-[16px] font-semibold'
-            style={{ margin: 0 }}
-          >
-            {graduation.college_name}
-          </p>
-          {/* <p
-            className='text-secondary text-[16px] font-semibold text-right'
-            style={{ margin: 0 }}
-          >
-            {graduation.address}
-          </p> */}
+          {graduation.date}
+          <br className="sm:block hidden" />
+          <span>{graduation.address}</span>
         </div>
-  
-        {/* <ul className='mt-5 list-disc ml-5 space-y-2'>
-          {experience.points.map((point, index) => (
-            <li
-              key={`experience-point-${index}`}
-              className='text-white-100 text-[14px] pl-1 tracking-wider'
-            >
-              {point}
-            </li>
-          ))}
-        </ul> */}
-      </VerticalTimelineElement>
-    );
-  };
+      }
+      iconStyle={{ background: graduation.iconBg }}
+      icon={
+        <div className="flex justify-center items-center w-full h-full">
+          <img
+            src={graduation.icon}
+            alt={graduation.college_name}
+            className="w-[100%] h-[100%] object-contain"
+          />
+        </div>
+      }
+    >
+      <div>
+        <h3 className="text-white text-[24px] font-bold">
+          {graduation.diploma}
+        </h3>
+        <p
+          className="text-secondary text-[16px] font-semibold"
+          style={{ margin: 0 }}
+        >
+          {graduation.college_name}
+        </p>
+      </div>
+    </VerticalTimelineElement>
+  );
+};
 
 const Education = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0)}>
         <p className={`${styles.sectionSubText} text-center`}>
           Where and What I learned
         </p>
@@ -84,19 +74,18 @@ const Education = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
+      <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {graduations.map((graduation, index) => (
             <EducationCard
               key={`graduation-${index}`}
-              graduation={graduation}
+              graduation={graduation} // Pass the whole graduation object
             />
           ))}
         </VerticalTimeline>
       </div>
-
     </>
   );
 };
 
-export default SectionWrapper(Education, "formtion");
+export default SectionWrapper(Education, "formation");
