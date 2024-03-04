@@ -15,29 +15,26 @@ interface ServiceCardProps {
   index: number;
   title: string;
   icon: string;
+  options: {
+    max: number;
+    scale: number;
+    speed: number;
+  };
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, options }) => {
   return (
-    <Tilt className='xs:w-[250px] w-full'>
+    <Tilt options={options} className='xs:w-[250px] w-full'>
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
         className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
       >
-        <div
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-        >
+        <div className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
           <img
             src={icon}
             alt='web-development'
             className='w-16 h-16 object-contain'
           />
-
           <h3 className='text-white text-[20px] font-bold text-center'>
             {title}
           </h3>
@@ -50,7 +47,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon }) => {
 const About: React.FC = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0)}>
         <p className={styles.sectionSubText}>Profile</p>
         <h2 className={styles.sectionHeadText}>Overview</h2>
       </motion.div>
@@ -60,7 +57,7 @@ const About: React.FC = () => {
       </motion.p>
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
         {services.map((service: Service, index: number) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard key={service.title} index={index} {...service} options={{ max: 45, scale: 1, speed: 450 }} />
         ))}
       </div>
     </>

@@ -72,7 +72,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
 const Experience: React.FC = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0)}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>
