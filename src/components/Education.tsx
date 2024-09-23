@@ -1,21 +1,30 @@
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import React from "react";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+
 import "react-vertical-timeline-component/style.min.css";
+
 import { styles } from "../style";
-import { graduations } from "../constants";
+import { graduations } from "../constants"; // Assuming you have a 'graduations' constant defined
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-interface EducationData {
-  diploma: string;
-  college_name: string;
+interface Graduation {
+  date: string;
   icon: string;
   iconBg: string;
-  date: string;
-  address: string;
+  diploma: string;
+  college_name: string;
 }
 
-const EducationCard = ({ graduation }: { graduation: EducationData }) => {
+interface GraduationCardProps {
+  graduation: Graduation;
+}
+
+const GraduationCard: React.FC<GraduationCardProps> = ({ graduation }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -23,14 +32,14 @@ const EducationCard = ({ graduation }: { graduation: EducationData }) => {
         color: "#fff",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={`${graduation.date}\n${graduation.address}`} // Concatenated date and address
+      date={graduation.date}
       iconStyle={{ background: graduation.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
           <img
             src={graduation.icon}
             alt={graduation.college_name}
-            className="w-[100%] h-[100%] object-contain"
+            className="w-[60%] h-[60%] object-contain"
           />
         </div>
       }
@@ -50,23 +59,23 @@ const EducationCard = ({ graduation }: { graduation: EducationData }) => {
   );
 };
 
-const Education = () => {
+const Education: React.FC = () => {
   return (
     <>
       <motion.div variants={textVariant(0)}>
         <p className={`${styles.sectionSubText} text-center`}>
-          Where and What I learned
+          Where and What I have Studied
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          Education and Diplomas
+          Education
         </h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {graduations.map((graduation, index) => (
-            <EducationCard
-              key={`graduation-${index}`}
+          {graduations.map((graduation: Graduation, index: number) => (
+            <GraduationCard
+              key={`graduation-${index}`}  
               graduation={graduation}
             />
           ))}
@@ -76,4 +85,4 @@ const Education = () => {
   );
 };
 
-export default SectionWrapper(Education, "formation");
+export default SectionWrapper(Education, "education");

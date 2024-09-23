@@ -31,6 +31,7 @@ import ensias from "./education/logo5_1.png";
 
 //Company
 import Huawei from "./company/huawei.png";
+import attijari from "./company/attijari.png"
 
 
 export{
@@ -58,5 +59,6 @@ export{
     high,
     UMP,
     ensias,
-    Huawei
+    Huawei,
+    attijari
 }

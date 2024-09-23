@@ -1,0 +1,11 @@
+Model Information:
+* title:	Program (Databrawl)
+* source:	https://sketchfab.com/3d-models/program-databrawl-226d899e28b547059bdfd01006ac21d1
+* author:	Jonah Amos (https://sketchfab.com/DiamondWolf3393)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Program (Databrawl)" (https://sketchfab.com/3d-models/program-databrawl-226d899e28b547059bdfd01006ac21d1) by Jonah Amos (https://sketchfab.com/DiamondWolf3393) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

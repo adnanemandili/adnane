@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 import About from "./About";
 import Contact from "./Contact";
 import Experience from "./Experience";
-import Formation from "./Formation";
+import Formation from "./Education";
 import Projects from "./Projects";
 import Tech from "./Tech";
 import Home from "./Home";

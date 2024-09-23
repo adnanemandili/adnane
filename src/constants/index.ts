@@ -30,6 +30,7 @@ import {
   ensias,
   high,
   tailwindcss,
+  attijari,
 } from "../assets";
 
 export const navLinks = [
@@ -57,7 +58,7 @@ export const navLinks = [
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "DevOps researcher and enthusiast",
       icon: mobile,
     },
     {
@@ -150,19 +151,19 @@ export const navLinks = [
         "Acquiring expertise in Docker tools, containerization, and the deployment of web applications in cloud environments."
       ],
     },
-    // {
-    //   title: "React Native Developer",
-    //   company_name: "Tesla",
-    //   icon: tesla,
-    //   iconBg: "#E6DEDD",
-    //   date: "Jan 2021 - Feb 2022",
-    //   points: [
-    //     "Developing and maintaining web applications using React.js and other related technologies.",
-    //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //     "Implementing responsive design and ensuring cross-browser compatibility.",
-    //     "Participating in code reviews and providing constructive feedback to other developers.",
-    //   ],
-    // },
+    {
+      title: "Software engineer intern / Full-Stack devloper",
+      company_name: "AttijariWafa Bank",
+      icon: attijari,
+      iconBg: "#E6DEDD",
+      date: "July 2024 - Sept 2022",
+      points: [
+        "Designed and developed an automated information exchange system between agencies and a financial group with validation and conversion features.",
+        "Built a user-friendly interface for agencies to upload Excel files, ensuring compliance before conversion to XML format.",
+        "Developed a REST API using Spring Boot for handling file validations and conversions, integrating Apache POI for Excel manipulation and JAXB for XML generation.",
+        "Implemented real-time notifications for exception handling and collaborated with external teams to ensure compliance with financial regulations.",
+      ],
+    },
     // {
     //   title: "Web Developer",
     //   company_name: "Shopify",

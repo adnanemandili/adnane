@@ -53,7 +53,7 @@ const About: React.FC = () => {
       </motion.div>
 
       <motion.p variants={fadeIn("","",0.1,1)} className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-        As a second-year software engineering student at ENSIAS, I am actively seeking an internship to further enhance my expertise in cloud computing and web development. My passion for programming, coupled with formal training, fuels my motivation to contribute to innovative projects within a dynamic professional environment. I am eager to apply my skills and knowledge to make meaningful contributions in the ever-evolving field of technology.
+      I'm Adnane Mandili, a final-year software engineering student at ENSIAS, passionate about DevOps and system automation. As a DevOps researcher and enthusiast, I specialize in developing scalable solutions and problem-solving, particularly in Java and cloud technologies. I have hands-on experience with Spring Boot, cloud computing, and system integration. Currently working on my PFE thesis, I’m seeking opportunities to apply my technical skills to real-world projects, especially in software engineering and DevOps environments. I thrive in collaborative teams and am driven by continuous learning and innovation.
       </motion.p>
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
         {services.map((service: Service, index: number) => (
